@@ -5,10 +5,8 @@ import org.thymeleaf.context.Context;
 import org.thymeleaf.templatemode.TemplateMode;
 import org.thymeleaf.templateresolver.ClassLoaderTemplateResolver;
 
-
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.StringWriter;
 import java.util.Locale;
 
 /**
@@ -24,7 +22,7 @@ public class ThymeleafExample {
         engine.setTemplateResolver(resolver);
         FileWriter fw = new FileWriter("result.html", true);
         Context context = new Context(Locale.ENGLISH);
-        engine.process("home", context, fw);
+        engine.process("template", context, fw);
 
 
     }

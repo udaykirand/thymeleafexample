@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Thymeleaf Example</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <link rel="stylesheet" th:href="@{main.css}"
+          href="main.css" />
+
+</head>
+<body>
+<h1>Thymeleaf examples</h1>
+
+<div class="container">
+    <div th:replace="fragments/properties :: properties"></div>
+
+</div>
+<!-- /.container -->
+
+</body>
+</html>
