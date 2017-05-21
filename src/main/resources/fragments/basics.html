@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Properties demo</title>
@@ -21,6 +21,24 @@
         <span th:text="'User name: ' + ${user.name}">This would be replaced with content from bean</span><br>
         <span th:text="'User Id: ' + ${user.id}">This would be replaced with content from bean</span>
     </p>
+
+    <h2>List of objects: </h2>
+    <p th:each="user: ${users}">
+        <span th:text="'User name: ' + ${user.name}">From list of beans</span><br>
+        <span th:text="'User Id: ' + ${user.id}">From list of beans</span>
+    </p>
+    <h2>Using if: </h2>
+    <div th:each="user: ${users}">
+    <p th:if="${user.id > 1000}">
+        <span th:text="'User name: ' + ${user.name}">From list of beans</span><br>
+        <span th:text="'User Id: ' + ${user.id}">From list of beans</span>
+    </p>
+    </div>
+    <h2>Using lists: </h2>
+    <div th:if="${not #lists.isEmpty(users)}">
+        <span th:text="'User name: ' + ${user.name}">From list of beans</span><br>
+        <span th:text="'User Id: ' + ${user.id}">From list of beans</span>
+    </div>
 
 </div>
 </body>
