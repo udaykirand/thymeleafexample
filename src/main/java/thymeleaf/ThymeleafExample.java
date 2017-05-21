@@ -4,6 +4,7 @@ import org.thymeleaf.TemplateEngine;
 import org.thymeleaf.context.Context;
 import org.thymeleaf.templatemode.TemplateMode;
 import org.thymeleaf.templateresolver.ClassLoaderTemplateResolver;
+import thymeleaf.bean.User;
 
 import java.io.FileWriter;
 import java.io.IOException;
@@ -20,8 +21,11 @@ public class ThymeleafExample {
         resolver.setSuffix(".html");
         TemplateEngine engine = new TemplateEngine();
         engine.setTemplateResolver(resolver);
-        FileWriter fw = new FileWriter("result.html", true);
+        FileWriter fw = new FileWriter("result.html");
+        User user = new User(new Long(999), "Uday");
         Context context = new Context(Locale.ENGLISH);
+        context.setVariable("username", "variable from context");
+        context.setVariable("user", user);
         engine.process("template", context, fw);
 
 

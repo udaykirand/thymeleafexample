@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Properties demo</title>
+</head>
+<body>
+<div th:fragment="basics">
+
+    <h2>From properties file and internationalization: </h2>
+    <p>
+        <span th:text="'Message: ' + #{hello.world}">This would be replaced with content from properties file</span>
+    </p>
+
+    <h2>Variable substitution: </h2>
+    <p>
+        <span th:text="'Variable replacement: ' + ${username}">This would be replaced with content from context</span>
+    </p>
+    <h2>Variable from bean: </h2>
+    <p>
+        <span th:text="'User name: ' + ${user.name}">This would be replaced with content from bean</span><br>
+        <span th:text="'User Id: ' + ${user.id}">This would be replaced with content from bean</span>
+    </p>
+
+</div>
+</body>
+</html>
